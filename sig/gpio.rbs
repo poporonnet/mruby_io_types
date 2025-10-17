@@ -33,7 +33,7 @@ class GPIO
   #   ```ruby
   #   # ピン番号1を出力に設定する。
   #   gpio1 = GPIO.new 1, GPIO::OUT
-  #   
+  #
   #   # B1ピンを入力、内部プルアップに設定する。（PIC等）
   #   gpio1 = GPIO.new "B1", GPIO::IN | GPIO::PULL_UP
   #   ```
@@ -50,7 +50,7 @@ class GPIO
   def read: () -> Integer
 
   # ピンの値がハイレベル ( `== 1` ) か調べる。
-  # 
+  #
   # @return ハイレベルなら`true`\
   # @example
   #   ```ruby
@@ -59,7 +59,7 @@ class GPIO
   def high?: () -> bool
 
   # ピンの値がローレベル ( `==0` )か調べる。
-  # 
+  #
   # @return ローレベルなら`true`\
   # @example
   #   ```ruby
@@ -68,14 +68,14 @@ class GPIO
   def low?: () -> bool
 
   # ピンに値を出力する。
-  # 
+  #
   # @param data 出力する値 `0` または `1` もしくは任意の整数\
   # @note 複数ビットまとめて扱う実装の場合は、`data` に任意の整数を与える。
-  # 
+  #
   def write: (Integer data) -> void
 
   # モードを上書きで変更する。
-  # 
+  #
   # @param params 変更するモード
   def setmode: (_Mode params) -> void
 
