@@ -1,0 +1,89 @@
+# - 汎用デジタル入出力機能をサポートするクラス。
+# - 一般には、一つの物理ピンの入力もしくは出力の制御を想定している。
+class GPIO
+  interface _Mode
+    def |: (_Mode other) -> _Mode
+  end
+
+  # 入力に設定する
+  IN: _Mode
+
+  # 出力に設定する
+  OUT: _Mode
+
+  # ハイインピーダンスに設定する
+  HIGH_Z: _Mode
+
+  # 内部プルアップを有効にする
+  PULL_UP: _Mode
+
+  # 内部プルダウンを有効にする
+  PULL_DOWN: _Mode
+
+  # オープンドレインモードに設定する
+  OPEN_DRAIN: _Mode
+
+  type pin = Integer | String
+
+  # @param pin 使用する物理ピン\
+  # @rbs pin: pin
+  # @rbs params: _Mode
+  # @param params モードの指定\
+  # @example
+  #   ```ruby
+  #   # ピン番号1を出力に設定する。
+  #   gpio1 = GPIO.new 1, GPIO::OUT
+  #   
+  #   # B1ピンを入力、内部プルアップに設定する。（PIC等）
+  #   gpio1 = GPIO.new "B1", GPIO::IN | GPIO::PULL_UP
+  #   ```
+  def initialize: (pin pin, _Mode params) -> GPIO
+
+  # ピンから値を読み込む。
+  #
+  # @return `0`または`1` もしくは任意の整数\
+  # @note 複数ビットまとめて扱う実装の場合は、任意の整数を返す。\
+  # @example
+  #   ```ruby
+  #   v1 = gpio1.read
+  #   ```
+  def read: () -> Integer
+
+  # ピンの値がハイレベル ( `== 1` ) か調べる。
+  # 
+  # @return ハイレベルなら`true`\
+  # @example
+  #   ```ruby
+  #   if gpio1.high?
+  #   ```
+  def high?: () -> bool
+
+  # ピンの値がローレベル ( `==0` )か調べる。
+  # 
+  # @return ローレベルなら`true`\
+  # @example
+  #   ```ruby
+  #   if gpio1.low?
+  #   ```
+  def low?: () -> bool
+
+  # ピンに値を出力する。
+  # 
+  # @param data 出力する値 `0` または `1` もしくは任意の整数\
+  # @note 複数ビットまとめて扱う実装の場合は、`data` に任意の整数を与える。
+  # 
+  def write: (Integer data) -> void
+
+  # モードを上書きで変更する。
+  # 
+  # @param params 変更するモード
+  def setmode: (_Mode params) -> void
+
+  def self.setmode: (pin pin, _Mode params) -> void
+
+  def self.read_at: (pin pin) -> Integer
+
+  def self.high_at?: (pin pin) -> bool
+
+  def self.write_at?: (pin pin, Integer data) -> void
+end
