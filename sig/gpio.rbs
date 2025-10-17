@@ -37,7 +37,7 @@ class GPIO
   #   # B1ピンを入力、内部プルアップに設定する。（PIC等）
   #   gpio1 = GPIO.new "B1", GPIO::IN | GPIO::PULL_UP
   #   ```
-  def initialize: (pin pin, _Mode params) -> GPIO
+  def initialize: (pin pin, _Mode params) -> void
 
   # ピンから値を読み込む。
   #
