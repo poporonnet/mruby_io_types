@@ -1,3 +1,6 @@
+plugins:
+  - rubocop-on-rbs
+
 AllCops:
   NewCops: enable
 
@@ -11,3 +14,6 @@ Style/StringLiteralsInInterpolation:
 
 Layout/LineLength:
   Max: 120
+
+RBS:
+  Enabled: true
