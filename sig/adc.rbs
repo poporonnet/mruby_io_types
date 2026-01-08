@@ -1,0 +1,11 @@
+class ADC
+  type pin = Integer | String
+
+  def initialize: (pin pin, *untyped params) -> void
+
+  def read_voltage: () -> Float
+
+  alias read read_voltage
+
+  def read_raw: () -> Integer
+end
