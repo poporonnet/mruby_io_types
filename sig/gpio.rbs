@@ -83,5 +83,7 @@ class GPIO
 
   def self.high_at?: (pin pin) -> bool
 
-  def self.write_at?: (pin pin, Integer data) -> void
+  def self.low_at?: (pin pin) -> bool
+
+  def self.write_at: (pin pin, Integer data) -> void
 end
