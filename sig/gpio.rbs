@@ -26,8 +26,6 @@ class GPIO
   type pin = Integer | String
 
   # @param pin 使用する物理ピン\
-  # @rbs pin: pin
-  # @rbs params: _Mode
   # @param params モードの指定\
   # @example
   #   ```ruby
