@@ -1,0 +1,23 @@
+class I2C
+  def initialize: (
+    ?Integer? id,
+    ?frequency: Integer,
+    ?freq: Integer,
+    ?scl_pin: Integer,
+    ?sda_pin: Integer
+  ) -> void
+
+  def read: (Integer i2c_adrs_7, Integer read_bytes, *(Integer | Array[Integer] | String) params) -> String
+
+  def write: (Integer i2c_adrs_7, *(Integer | Array[Integer] | String) outputs) -> Integer
+
+  def send_start: () -> void
+
+  def send_restart: () -> void
+
+  def send_stop: () -> void
+
+  def raw_read: (Integer read_bytes, ?bool ack_nack) -> String
+
+  def raw_write: (*(Integer | Array[Integer] | String) outputs) -> Integer
+end
