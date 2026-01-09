@@ -1,0 +1,18 @@
+class PWM
+  type pin = Integer | String
+
+  def initialize: (
+    pin pin,
+    ?frequency: Integer | Float,
+    ?freq: Integer | Float,
+    ?duty: Integer | Float
+  ) -> void
+
+  def frequency: (Integer | Float freq) -> void
+
+  def period_us: (Integer micro_sec) -> void
+
+  def duty: (Integer | Float percent) -> void
+
+  def pulse_width_us: (Integer micro_sec) -> void
+end
