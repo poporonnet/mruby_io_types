@@ -1,0 +1,31 @@
+class SPI
+  # FIXME: RBS does not support opaque types.
+  # `type first_bit = bot` works for regular users,
+  # but prevents library creators from defining constants.
+  type first_bit = Integer
+
+  MSB_FIRST: first_bit
+
+  LSB_FIRST: first_bit
+
+  type mode = 0 | 1 | 2 | 3
+
+  def initialize: (
+    ?Integer? id,
+    ?unit: Integer,
+    ?frequency: Integer,
+    ?mode: mode,
+    ?first_bit: first_bit
+  ) -> void
+
+  def setmode: (mode: mode) -> void
+
+  def read: (Integer read_bytes) -> String
+  
+  def write: (*(Integer | Array[Integer] | String) outputs) -> nil
+
+  def transfer: (
+    Integer | Array[Integer] | String outputs,
+    ?Integer additional_read_bytes
+  ) -> String
+end
