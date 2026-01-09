@@ -1,0 +1,7 @@
+# 存在しないmoduleを定義したくないのでトップレベルのtypeを許可
+# rubocop:disable RBS/Lint/TopLevelTypeAlias
+
+type pin = Integer | String
+type id = Integer | String
+
+# rubocop:enable all

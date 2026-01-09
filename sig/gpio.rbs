@@ -23,8 +23,6 @@ class GPIO
   # オープンドレインモードに設定する
   OPEN_DRAIN: _Mode
 
-  type pin = Integer | String
-
   # @param pin 使用する物理ピン\
   # @param params モードの指定\
   # @example

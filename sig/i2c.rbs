@@ -1,10 +1,10 @@
 class I2C
   def initialize: (
-    ?Integer? id,
+    ?id? id,
     ?frequency: Integer,
     ?freq: Integer,
-    ?scl_pin: Integer,
-    ?sda_pin: Integer
+    ?scl_pin: pin,
+    ?sda_pin: pin
   ) -> void
 
   def read: (Integer i2c_adrs_7, Integer read_bytes, *(Integer | Array[Integer] | String) params) -> String
