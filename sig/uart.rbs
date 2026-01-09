@@ -1,0 +1,67 @@
+class UART
+  # FIXME: RBS does not support opaque types.
+  # cf. SPI::first_bit
+  type parameter = Integer
+
+  NONE: parameter
+
+  EVEN: parameter
+
+  ODD: parameter
+
+  RTSCTS: parameter
+
+  type id = Integer | String
+  type pin = Integer | String
+
+  def initialize: (
+    ?id? id,
+    ?baudrate: Integer,
+    ?baud: Integer,
+    ?data_bits: Integer,
+    ?stop_bits: Integer,
+    ?parity: parameter,
+    ?flow_control: parameter,
+    ?unit: id,
+    ?txd_pin: pin,
+    ?rxd_pin: pin,
+    ?rts_pin: pin,
+    ?cts_pin: pin
+  ) -> void
+
+  def setmode: (
+    ?baudrate: Integer,
+    ?baud: Integer,
+    ?data_bits: Integer,
+    ?stop_bits: Integer,
+    ?parity: parameter,
+    ?flow_control: parameter,
+    ?unit: id,
+    ?txd_pin: pin,
+    ?rxd_pin: pin,
+    ?rts_pin: pin,
+    ?cts_pin: pin
+  ) -> void
+
+  def read: (Integer read_bytes) -> String
+
+  def write: (String) -> Integer
+
+  def gets: () -> String
+
+  def puts: (String) -> nil
+
+  def bytes_available: () -> Integer
+
+  def bytes_to_write: () -> Integer
+
+  def can_read_line: () -> bool
+
+  def flush: () -> void
+
+  def clear_rx_buffer: () -> void
+
+  def clear_tx_buffer: () -> void
+
+  def send_break: (?(Integer | Float) time) -> void
+end
