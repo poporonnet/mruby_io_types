@@ -1,6 +1,4 @@
 class PWM
-  type pin = Integer | String
-
   def initialize: (
     pin pin,
     ?frequency: Integer | Float,

@@ -11,8 +11,8 @@ class SPI
   type mode = 0 | 1 | 2 | 3
 
   def initialize: (
-    ?Integer? id,
-    ?unit: Integer,
+    ?id? id,
+    ?unit: id,
     ?frequency: Integer,
     ?mode: mode,
     ?first_bit: first_bit

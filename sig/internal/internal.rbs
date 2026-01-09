@@ -1,0 +1,2 @@
+type pin = Integer | String
+type id = Integer | String

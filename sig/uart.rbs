@@ -11,9 +11,6 @@ class UART
 
   RTSCTS: parameter
 
-  type id = Integer | String
-  type pin = Integer | String
-
   def initialize: (
     ?id? id,
     ?baudrate: Integer,
