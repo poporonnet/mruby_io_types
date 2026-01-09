@@ -21,7 +21,7 @@ class SPI
   def setmode: (mode: mode) -> void
 
   def read: (Integer read_bytes) -> String
-  
+
   def write: (*(Integer | Array[Integer] | String) outputs) -> nil
 
   def transfer: (
