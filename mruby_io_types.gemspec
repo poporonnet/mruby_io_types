@@ -6,8 +6,8 @@ Gem::Specification.new do |spec|
   spec.authors = ['tufusa']
   spec.email = ['me@tufusa.net']
 
-  spec.summary = 'summary'
-  spec.description = 'description'
+  spec.summary = 'RBS type definitions for mruby & mruby/c Common I/O API.'
+  spec.description = 'RBS type definitions for mruby & mruby/c Common I/O API.'
   spec.homepage = 'https://github.com/poporonnet/mruby_io_types'
   spec.license = 'MIT'
   spec.required_ruby_version = '>= 3.2.0'
