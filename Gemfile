@@ -10,7 +10,7 @@ group :development do
 
   gem 'rubocop', '~> 1.21'
 
-  gem 'rubocop-on-rbs', '~> 1.8', require: false
+  gem 'rubocop-on-rbs', '~> 2.0', require: false
 
   gem 'steep', '~> 1.10', require: false
 end
